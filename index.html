@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paws & Care Pet Clinic | Compassionate Veterinary Care</title>
+    <meta name="description" content="Trusted Veterinary Services for Dogs, Cats, Birds & Exotic Pets. 24/7 Emergency Care.">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific Home Page Styles */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+        
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            z-index: 10;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        
+        .hero-content h1 span {
+            color: var(--primary);
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--text-light);
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .hero-image {
+            position: relative;
+        }
+        
+        .hero-image img {
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .floating-paw {
+            position: absolute;
+            color: var(--secondary);
+            font-size: 2rem;
+            opacity: 0.6;
+            z-index: 1;
+        }
+        
+        .paw-1 { top: 10%; left: -20px; animation-delay: 0s; }
+        .paw-2 { bottom: 20%; right: -30px; font-size: 3rem; color: var(--primary); animation-delay: 1s; }
+        .paw-3 { top: -30px; right: 20%; font-size: 1.5rem; animation-delay: 2s; }
+        
+        /* Stats Section */
+        .stats-section {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0;
+            margin-top: -50px;
+            position: relative;
+            z-index: 15;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+        
+        .stat-item p {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 20px;
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover .feature-icon {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        /* Pet Categories */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 30px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+        
+        .category-card i {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            transition: var(--transition);
+        }
+        
+        .category-card h4 {
+            margin: 0;
+            color: var(--text-dark);
+        }
+        
+        .category-card:hover {
+            background: var(--secondary);
+            transform: translateY(-10px);
+            border-color: var(--secondary);
+        }
+        
+        .category-card:hover i, .category-card:hover h4 {
+            color: white;
+        }
+        
+        /* Emergency Banner */
+        .emergency-banner {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            border-radius: var(--radius-lg);
+            margin: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .emergency-banner h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .emergency-banner p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn-white {
+            background: white;
+            color: #c0392b;
+        }
+        
+        .btn-white:hover {
+            background: var(--background);
+            color: #c0392b;
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            background: var(--primary-light);
+            padding: 80px 0;
+            border-radius: var(--radius-lg);
+            margin-top: 60px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 600px;
+            margin: 30px auto 0;
+            gap: 10px;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 25px;
+            border: none;
+            border-radius: var(--radius-pill);
+            outline: none;
+            font-size: 1rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 991px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            .hero-btns {
+                justify-content: center;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+        @media (max-width: 576px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .newsletter-form {
+                flex-direction: column;
+            }
+            .newsletter-form .btn {
+                width: 100%;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar glass">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-paw"></i> Paws & Care
+            </a>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pet-care.html">Pet Care</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="testimonials.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="appointment.html" class="btn btn-primary text-white" style="color: white !important;">Book Appointment</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="container hero-container">
+            <div class="hero-content reveal-left">
+                <h1>Compassionate Care For Your <span>Furry Friends</span></h1>
+                <p>Trusted Veterinary Services for Dogs, Cats, Birds & Exotic Pets. We provide the highest quality medical care in a warm and friendly environment.</p>
+                <div class="hero-btns">
+                    <a href="appointment.html" class="btn btn-primary">Book Appointment</a>
+                    <a href="about.html" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image reveal-right">
+                <i class="fas fa-paw floating-paw paw-1 floating"></i>
+                <i class="fas fa-bone floating-paw paw-2 floating" style="animation-delay: 1.5s;"></i>
+                <i class="fas fa-cat floating-paw paw-3 floating" style="animation-delay: 0.5s;"></i>
+                <img src="images/hero.png" alt="Veterinary Doctor with Pets">
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated Statistics -->
+    <div class="container">
+        <div class="stats-section reveal">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 class="counter" data-target="5000">0</h3>
+                    <p>Happy Pets</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="20">0</h3>
+                    <p>Veterinarians</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="15">0</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="24">0</h3>
+                    <p>Emergency Support</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <section class="section container">
+        <div class="text-center reveal">
+            <h2 class="section-title">Why Choose Us</h2>
+            <p class="section-subtitle">We are committed to providing the best possible care for your pets with state-of-the-art facilities and experienced staff.</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="card feature-card reveal" style="transition-delay: 0.1s;">
+                <div class="feature-icon"><i class="fas fa-user-md"></i></div>
+                <h3>Certified Veterinarians</h3>
+                <p>Our team consists of highly qualified and experienced veterinary professionals.</p>
+            </div>
+            <div class="card feature-card reveal" style="transition-delay: 0.2s;">
+                <div class="feature-icon"><i class="fas fa-microscope"></i></div>
+                <h3>Modern Equipment</h3>
+                <p>We use the latest medical technology for accurate diagnosis and effective treatments.</p>
+            </div>
+            <div class="card feature-card reveal" style="transition-delay: 0.3s;">
+                <div class="feature-icon"><i class="fas fa-heartbeat"></i></div>
+                <h3>Affordable Care</h3>
+                <p>Quality veterinary services at reasonable prices because every pet deserves care.</p>
+            </div>
+            <div class="card feature-card reveal" style="transition-delay: 0.4s;">
+                <div class="feature-icon"><i class="fas fa-ambulance"></i></div>
+                <h3>24/7 Emergency</h3>
+                <p>We are always ready to handle critical situations and emergencies around the clock.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pet Categories -->
+    <section class="section container" style="background-color: white; border-radius: var(--radius-lg); padding: 60px;">
+        <div class="text-center reveal">
+            <h2 class="section-title">Pets We Care For</h2>
+            <p class="section-subtitle">We provide specialized care for a wide variety of animals.</p>
+        </div>
+        
+        <div class="category-grid">
+            <div class="category-card reveal" style="transition-delay: 0.1s;">
+                <i class="fas fa-dog"></i>
+                <h4>Dogs</h4>
+            </div>
+            <div class="category-card reveal" style="transition-delay: 0.2s;">
+                <i class="fas fa-cat"></i>
+                <h4>Cats</h4>
+            </div>
+            <div class="category-card reveal" style="transition-delay: 0.3s;">
+                <i class="fas fa-dove"></i>
+                <h4>Birds</h4>
+            </div>
+            <div class="category-card reveal" style="transition-delay: 0.4s;">
+                <i class="fas fa-carrot"></i>
+                <h4>Rabbits</h4>
+            </div>
+            <div class="category-card reveal" style="transition-delay: 0.5s;">
+                <i class="fas fa-spider"></i>
+                <h4>Exotic Pets</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Banner -->
+    <div class="container">
+        <div class="emergency-banner reveal pulse">
+            <h2>24/7 Emergency Veterinary Care Available</h2>
+            <p>In case of an emergency, do not hesitate to contact us immediately.</p>
+            <a href="tel:+1234567890" class="btn btn-white"><i class="fas fa-phone-alt"></i> Call Now: (123) 456-7890</a>
+        </div>
+    </div>
+
+    <!-- Featured Doctors -->
+    <section class="section container">
+        <div class="text-center reveal">
+            <h2 class="section-title">Meet Our Experts</h2>
+            <p class="section-subtitle">Our dedicated team of veterinarians are passionate about animal health and well-being.</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="card reveal" style="text-align: center; transition-delay: 0.1s;">
+                <div style="width: 150px; height: 150px; margin: 0 auto 20px; border-radius: 50%; overflow: hidden; background: var(--primary-light);">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=300&q=80" alt="Dr. Sarah" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>Dr. Sarah Jenkins</h3>
+                <p style="color: var(--primary); font-weight: 600;">Chief Veterinarian</p>
+                <p>15 years of experience in general surgery and internal medicine.</p>
+            </div>
+            <div class="card reveal" style="text-align: center; transition-delay: 0.2s;">
+                <div style="width: 150px; height: 150px; margin: 0 auto 20px; border-radius: 50%; overflow: hidden; background: var(--primary-light);">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=300&q=80" alt="Dr. Mike" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>Dr. Michael Chen</h3>
+                <p style="color: var(--primary); font-weight: 600;">Avian Specialist</p>
+                <p>Specialized in the care and treatment of birds and exotic pets.</p>
+            </div>
+            <div class="card reveal" style="text-align: center; transition-delay: 0.3s;">
+                <div style="width: 150px; height: 150px; margin: 0 auto 20px; border-radius: 50%; overflow: hidden; background: var(--primary-light);">
+                    <img src="https://images.unsplash.com/photo-1594824436951-7f12bc577bd5?auto=format&fit=crop&w=300&q=80" alt="Dr. Emily" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>Dr. Emily Rodriguez</h3>
+                <p style="color: var(--primary); font-weight: 600;">Pet Dentist</p>
+                <p>Expert in animal dentistry and oral surgery procedures.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pet Adoption -->
+    <section class="section container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+        <div class="reveal-left">
+            <img src="images/pets.png" alt="Pets waiting for adoption" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+        </div>
+        <div class="reveal-right">
+            <h2 class="section-title">Adopt a Best Friend</h2>
+            <p>Give a loving home to a pet in need. We partner with local shelters to help abandoned animals find their forever families.</p>
+            <ul style="margin-bottom: 30px;">
+                <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> Dogs Available</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> Cats Available</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> Fully Vaccinated</li>
+            </ul>
+            <a href="#" class="btn btn-secondary">Meet Our Pets</a>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <div class="container">
+        <div class="newsletter reveal text-center">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get the latest pet care tips, news, and special offers delivered to your inbox.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3><i class="fas fa-paw" style="color: var(--primary);"></i> Paws & Care</h3>
+                    <p>Providing compassionate and professional veterinary care for your furry, feathered, and scaled family members.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Clinic</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="appointment.html">Book Appointment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">General Checkups</a></li>
+                        <li><a href="#">Vaccination</a></li>
+                        <li><a href="#">Pet Surgery</a></li>
+                        <li><a href="#">Emergency Care</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt" style="color: var(--primary); width: 20px;"></i> 123 Pet Street, Animal City, PC 12345</li>
+                        <li><i class="fas fa-phone-alt" style="color: var(--primary); width: 20px;"></i> (123) 456-7890</li>
+                        <li><i class="fas fa-envelope" style="color: var(--primary); width: 20px;"></i> info@pawscare.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Paws & Care Pet Clinic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

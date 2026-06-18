@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Care Guide | Paws & Care Pet Clinic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .blog-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 5px solid var(--primary);
+        }
+        
+        .blog-content {
+            padding: 30px;
+        }
+        
+        .blog-category {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 5px 15px;
+            border-radius: var(--radius-pill);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar glass">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-paw"></i> Paws & Care
+            </a>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pet-care.html" class="active">Pet Care</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="testimonials.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="appointment.html" class="btn btn-primary text-white" style="color: white !important;">Book Appointment</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container reveal">
+            <h1>Pet Care Guide</h1>
+            <p>Helpful resources and tips to keep your furry friends healthy and happy at home.</p>
+        </div>
+    </header>
+
+    <!-- Pet Care Grid -->
+    <section class="section container">
+        <div class="blog-grid">
+            <!-- Tip 1 -->
+            <div class="blog-card reveal">
+                <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=600&q=80" alt="Pet Health Tips" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category"><i class="fas fa-heartbeat"></i> Health Tips</span>
+                    <h3>10 Essential Health Tips for Dogs</h3>
+                    <p>Learn the fundamental routines that can significantly increase the lifespan and well-being of your canine companion.</p>
+                    <a href="#" class="btn btn-outline" style="margin-top: 15px;">Read More</a>
+                </div>
+            </div>
+            
+            <!-- Tip 2 -->
+            <div class="blog-card reveal" style="transition-delay: 0.1s;">
+                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80" alt="Vaccination" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category" style="background: rgba(255, 152, 0, 0.2); color: var(--secondary);"><i class="fas fa-syringe"></i> Vaccination</span>
+                    <h3>The Ultimate Vaccination Schedule</h3>
+                    <p>A comprehensive guide on when to vaccinate your kittens and puppies, and why booster shots are vital.</p>
+                    <a href="#" class="btn btn-outline" style="margin-top: 15px; border-color: var(--secondary); color: var(--secondary);">Read More</a>
+                </div>
+            </div>
+
+            <!-- Tip 3 -->
+            <div class="blog-card reveal" style="transition-delay: 0.2s;">
+                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=600&q=80" alt="Nutrition" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category"><i class="fas fa-bone"></i> Nutrition Guide</span>
+                    <h3>What Your Pet Should (and Shouldn't) Eat</h3>
+                    <p>Navigating the complex world of pet food, understanding labels, and identifying toxic human foods to avoid.</p>
+                    <a href="#" class="btn btn-outline" style="margin-top: 15px;">Read More</a>
+                </div>
+            </div>
+
+            <!-- Tip 4 -->
+            <div class="blog-card reveal" style="transition-delay: 0.3s;">
+                <img src="https://images.unsplash.com/photo-1601758228041-f3b279ce7bec?auto=format&fit=crop&w=600&q=80" alt="Exercise" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category" style="background: rgba(255, 152, 0, 0.2); color: var(--secondary);"><i class="fas fa-running"></i> Exercise</span>
+                    <h3>Exercise Recommendations by Breed</h3>
+                    <p>Not all pets need the same amount of activity. Find out how much exercise your specific pet breed requires daily.</p>
+                    <a href="#" class="btn btn-outline" style="margin-top: 15px; border-color: var(--secondary); color: var(--secondary);">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Paws & Care Pet Clinic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="back-to-top" class="back-to-top"><i class="fas fa-arrow-up"></i></div>
+    <script src="script.js"></script>
+</body>
+</html>
